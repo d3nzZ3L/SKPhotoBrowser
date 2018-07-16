@@ -91,7 +91,7 @@ private extension SKPaginationView {
         guard SKPhotoBrowserOptions.displayCounterLabel else { return }
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        label.center = CGPoint(x: frame.width / 3, y: frame.height / 3)
+        label.center = CGPoint(x: frame.width / 4, y: frame.height / 4)
         label.textAlignment = .left
         label.backgroundColor = .clear
         label.shadowColor = SKToolbarOptions.textShadowColor
