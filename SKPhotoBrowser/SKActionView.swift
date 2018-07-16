@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SKActionView: UIView {
+open class SKActionView: UIView {
     internal weak var browser: SKPhotoBrowser?
     internal var closeButton: SKCloseButton!
     internal var deleteButton: SKDeleteButton!
@@ -16,7 +16,7 @@ class SKActionView: UIView {
     // Action
     fileprivate var cancelTitle = "Cancel"
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -32,7 +32,7 @@ class SKActionView: UIView {
         configureDeleteButton()
     }
     
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if let view = super.hitTest(point, with: event) {
             if closeButton.frame.contains(point) || deleteButton.frame.contains(point) {
                 return view

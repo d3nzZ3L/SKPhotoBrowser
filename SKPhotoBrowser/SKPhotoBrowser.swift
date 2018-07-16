@@ -24,7 +24,7 @@ open class SKPhotoBrowser: UIViewController {
     // animation
     fileprivate let animator: SKAnimator = .init()
     
-    fileprivate var actionView: SKActionView!
+    public var actionView: SKActionView!
     public var paginationView: SKPaginationView!
     fileprivate var toolbar: SKToolbar!
 
