@@ -32,6 +32,15 @@ open class SKActionView: UIView {
         configureDeleteButton()
     }
     
+    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if let view = super.hitTest(point, with: event) {
+            if closeButton.frame.contains(point) || deleteButton.frame.contains(point) {
+                return view
+            }
+            return nil
+        }
+        return nil
+    }
     
     func updateFrame(frame: CGRect) {
         self.frame = frame
