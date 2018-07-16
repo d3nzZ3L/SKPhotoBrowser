@@ -29,7 +29,7 @@ class SKButton: UIButton {
     
     func setup(_ imageName: String) {
         backgroundColor = .clear
-        imageEdgeInsets = insets
+//        imageEdgeInsets = insets
         translatesAutoresizingMaskIntoConstraints = true
         autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin]
         
