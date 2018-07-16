@@ -62,7 +62,7 @@ class SKPaginationView: UIView {
         guard let browser = browser else { return }
         
         if browser.photos.count > 1 {
-            counterLabel?.text = "\(currentPageIndex + 1) / \(browser.photos.count)"
+            counterLabel?.text = "\(currentPageIndex + 1) из \(browser.photos.count)"
         } else {
             counterLabel?.text = nil
         }
@@ -91,8 +91,8 @@ private extension SKPaginationView {
         guard SKPhotoBrowserOptions.displayCounterLabel else { return }
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        label.center = CGPoint(x: frame.width / 2, y: frame.height / 2)
-        label.textAlignment = .center
+        label.center = CGPoint(x: frame.width / 3, y: frame.height / 3)
+        label.textAlignment = .left
         label.backgroundColor = .clear
         label.shadowColor = SKToolbarOptions.textShadowColor
         label.shadowOffset = CGSize(width: 0.0, height: 1.0)
