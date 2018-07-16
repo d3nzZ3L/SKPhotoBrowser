@@ -545,7 +545,7 @@ private extension SKPhotoBrowser {
         panGesture?.maximumNumberOfTouches = 1
 
         if let panGesture = panGesture {
-            view.addGestureRecognizer(panGesture)
+            //view.addGestureRecognizer(panGesture)
         }
     }
     
