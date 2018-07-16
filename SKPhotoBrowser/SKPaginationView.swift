@@ -10,7 +10,7 @@ import UIKit
 
 private let bundle = Bundle(for: SKPhotoBrowser.self)
 
-public class SKPaginationView: UIView {
+open class SKPaginationView: UIView {
     var counterLabel: UILabel?
     var prevButton: UIButton?
     var nextButton: UIButton?
@@ -40,7 +40,7 @@ public class SKPaginationView: UIView {
         update(browser?.currentPageIndex ?? 0)
     }
     
-    override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if let view = super.hitTest(point, with: event) {
             if let counterLabel = counterLabel, counterLabel.frame.contains(point) {
                 return view
