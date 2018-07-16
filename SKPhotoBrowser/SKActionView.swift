@@ -33,6 +33,9 @@ open class SKActionView: UIView {
     }
     
     override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if closeButton == nil {
+            configureCloseButton()
+        }
         if let view = super.hitTest(point, with: event) {
             if closeButton.frame.contains(point) || deleteButton.frame.contains(point) || leftView.frame.contains(point) {
                 return view
@@ -45,6 +48,10 @@ open class SKActionView: UIView {
     func updateFrame(frame: CGRect) {
         self.frame = frame
         setNeedsDisplay()
+    }
+    
+    func setCloseButton(button: SKCloseButton) {
+        closeButton = button
     }
 
     func updateCloseButton(image: UIImage, size: CGSize? = nil) {
@@ -92,7 +99,7 @@ extension SKActionView {
             closeButton = SKCloseButton(frame: CGRect(origin: .zero, size: size!))
             closeButton.addTarget(self, action: #selector(closeButtonPressed(_:)), for: .touchUpInside)
             closeButton.isHidden = !SKPhotoBrowserOptions.displayCloseButton
-            addSubview(closeButton)
+//            addSubview(closeButton)
         }
 
         guard let size = size else { return }
