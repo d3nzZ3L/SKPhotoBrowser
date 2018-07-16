@@ -87,7 +87,7 @@ class SKActionView: UIView {
 }
 
 extension SKActionView {
-    func configureCloseButton(image: UIImage? = nil, size: CGSize? = nil) {
+    func configureCloseButton(image: UIImage? = nil, size: CGSize? = CGSize(width: 28, height: 28)) {
         if closeButton == nil {
             closeButton = SKCloseButton(frame: .zero)
             closeButton.addTarget(self, action: #selector(closeButtonPressed(_:)), for: .touchUpInside)
