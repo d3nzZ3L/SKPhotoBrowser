@@ -61,6 +61,6 @@ public struct SKCaptionOptions {
 
 public struct SKToolbarOptions {
     public static var textColor: UIColor = .white
-    public static var font: UIFont = .systemFont(ofSize: 17.0)
+    public static var font: UIFont = .systemFont(ofSize: 15.0)
     public static var textShadowColor: UIColor = .black
 }

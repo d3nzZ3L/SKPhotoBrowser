@@ -10,7 +10,7 @@ import UIKit
 
 private let bundle = Bundle(for: SKPhotoBrowser.self)
 
-class SKPaginationView: UIView {
+public class SKPaginationView: UIView {
     var counterLabel: UILabel?
     var prevButton: UIButton?
     var nextButton: UIButton?
@@ -19,7 +19,7 @@ class SKPaginationView: UIView {
     
     fileprivate weak var browser: SKPhotoBrowser?
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -40,7 +40,7 @@ class SKPaginationView: UIView {
         update(browser?.currentPageIndex ?? 0)
     }
     
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if let view = super.hitTest(point, with: event) {
             if let counterLabel = counterLabel, counterLabel.frame.contains(point) {
                 return view
@@ -91,7 +91,7 @@ private extension SKPaginationView {
         guard SKPhotoBrowserOptions.displayCounterLabel else { return }
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        label.center = CGPoint(x: frame.width / 4, y: frame.height / 4)
+        label.center = CGPoint(x: frame.width / 5, y: frame.height / 5)
         label.textAlignment = .left
         label.backgroundColor = .clear
         label.shadowColor = SKToolbarOptions.textShadowColor
