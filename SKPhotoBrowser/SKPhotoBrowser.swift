@@ -26,7 +26,7 @@ open class SKPhotoBrowser: UIViewController {
     
     public var actionView: SKActionView!
     public var paginationView: SKPaginationView!
-    fileprivate var toolbar: SKToolbar!
+    public var toolbar: SKToolbar!
 
     // actions
     fileprivate var activityViewController: UIActivityViewController!
