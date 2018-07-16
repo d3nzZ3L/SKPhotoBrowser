@@ -15,13 +15,13 @@ class SKButton: UIButton {
     internal var showFrame: CGRect!
     internal var hideFrame: CGRect!
     
-    fileprivate var insets: UIEdgeInsets {
-        if UI_USER_INTERFACE_IDIOM() == .phone {
-            return UIEdgeInsets(top: 15.25, left: 15.25, bottom: 15.25, right: 15.25)
-        } else {
-            return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        }
-    }
+//    fileprivate var insets: UIEdgeInsets {
+//        if UI_USER_INTERFACE_IDIOM() == .phone {
+//            return UIEdgeInsets(top: 15.25, left: 15.25, bottom: 15.25, right: 15.25)
+//        } else {
+//            return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+//        }
+//    }
     fileprivate let size: CGSize = CGSize(width: 44, height: 44)
     fileprivate var marginX: CGFloat = 0
     fileprivate var marginY: CGFloat = 0
