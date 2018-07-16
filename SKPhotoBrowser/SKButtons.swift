@@ -11,17 +11,10 @@ import Foundation
 // helpers which often used
 private let bundle = Bundle(for: SKPhotoBrowser.self)
 
-class SKButton: UIButton {
+open class SKButton: UIButton {
     internal var showFrame: CGRect!
     internal var hideFrame: CGRect!
-    
-//    fileprivate var insets: UIEdgeInsets {
-//        if UI_USER_INTERFACE_IDIOM() == .phone {
-//            return UIEdgeInsets(top: 15.25, left: 15.25, bottom: 15.25, right: 15.25)
-//        } else {
-//            return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-//        }
-//    }
+
     fileprivate let size: CGSize = CGSize(width: 44, height: 44)
     fileprivate var marginX: CGFloat = 0
     fileprivate var marginY: CGFloat = 0
@@ -29,7 +22,6 @@ class SKButton: UIButton {
     
     func setup(_ imageName: String) {
         backgroundColor = .clear
-//        imageEdgeInsets = insets
         translatesAutoresizingMaskIntoConstraints = true
         autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin]
         
@@ -49,10 +41,10 @@ class SKButton: UIButton {
     func updateFrame(_ frameSize: CGSize) { }
 }
 
-class SKImageButton: SKButton {
+open class SKImageButton: SKButton {
     fileprivate var imageName: String { return "" }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -64,7 +56,7 @@ class SKImageButton: SKButton {
     }
 }
 
-class SKCloseButton: SKImageButton {
+open class SKCloseButton: SKImageButton {
     override var imageName: String { return "back" }
     override var marginX: CGFloat {
         get {
@@ -79,7 +71,7 @@ class SKCloseButton: SKImageButton {
         set { super.marginY = newValue }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

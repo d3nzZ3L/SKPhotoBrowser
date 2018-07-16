@@ -10,9 +10,9 @@ import UIKit
 
 open class SKActionView: UIView {
     internal weak var browser: SKPhotoBrowser?
-    internal var closeButton: SKCloseButton!
+    public var closeButton: SKCloseButton!
     internal var deleteButton: SKDeleteButton!
-    
+    public var leftView: UIView!
     // Action
     fileprivate var cancelTitle = "Cancel"
     
@@ -34,7 +34,7 @@ open class SKActionView: UIView {
     
     override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if let view = super.hitTest(point, with: event) {
-            if closeButton.frame.contains(point) || deleteButton.frame.contains(point) {
+            if closeButton.frame.contains(point) || deleteButton.frame.contains(point) || leftView.frame.contains(point) {
                 return view
             }
             return nil
