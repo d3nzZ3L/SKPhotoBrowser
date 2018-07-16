@@ -40,20 +40,6 @@ open class SKPaginationView: UIView {
         update(browser?.currentPageIndex ?? 0)
     }
     
-    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        if let view = super.hitTest(point, with: event) {
-            if let counterLabel = counterLabel, counterLabel.frame.contains(point) {
-                return view
-            } else if let prevButton = prevButton, prevButton.frame.contains(point) {
-                return view
-            } else if let nextButton = nextButton, nextButton.frame.contains(point) {
-                return view
-            }
-            return nil
-        }
-        return nil
-    }
-    
     func updateFrame(frame: CGRect) {
         self.frame = CGRect(x: 0, y: frame.height - margin - extraMargin, width: frame.width, height: 100)
     }
